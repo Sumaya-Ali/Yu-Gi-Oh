@@ -19,7 +19,7 @@ List<PlayCard> cards =[
     def:2000,
     title: "التنين الأسود أحمر العينين",
     subtitle: "تنين عادي",
-    desc: "تنين شري بهجوم مميت",
+    desc: "تنين شرس بهجوم مميت",
     atk: 2400,
     image: "assets/RedEyesBlackDragon.png",
   ),
