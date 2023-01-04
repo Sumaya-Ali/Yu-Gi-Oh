@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
+import 'color_dot.dart';
 import 'details_image.dart';
 class DetailsBody extends StatelessWidget {
   const DetailsBody({Key? key}) : super(key: key);
@@ -23,6 +24,17 @@ class DetailsBody extends StatelessWidget {
           child: Column(
             children: [
               DetailsImage(size: size,image: "assets/DarkMagicianAlternate.png",),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: eDefaultPadding),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ColorDot(fillColor: eTextLightColor,isSelected: true,),
+                    ColorDot(fillColor: Color.fromRGBO(108, 231, 132, 1.0),),
+                    ColorDot(fillColor: Color.fromRGBO(235, 108, 93, 1.0),),
+                  ],
+                ),
+              ),
             ],
           ),
         )
