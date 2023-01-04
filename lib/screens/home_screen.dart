@@ -1,7 +1,7 @@
 import 'package:yu_gi_oh/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:yu_gi_oh/widgets/home_body.dart';
+import 'package:yu_gi_oh/widgets/home/home_body.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);

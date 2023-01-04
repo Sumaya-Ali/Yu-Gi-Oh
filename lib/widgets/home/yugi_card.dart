@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../models/card.dart';
-import '../constants.dart';
+import '../../models/card.dart';
+import '../../constants.dart';
 
 class YugiCard extends StatelessWidget {
   const YugiCard({

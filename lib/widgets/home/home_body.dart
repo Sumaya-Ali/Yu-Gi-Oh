@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:yu_gi_oh/models/card.dart';
-import 'package:yu_gi_oh/widgets/yugi_card.dart';
+import 'package:yu_gi_oh/widgets/home/yugi_card.dart';
 
-import '../constants.dart';
+import '../../constants.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({Key? key}) : super(key: key);
