@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:yu_gi_oh/models/card.dart';
+import 'package:yu_gi_oh/screens/details_screen.dart';
 import 'package:yu_gi_oh/widgets/home/yugi_card.dart';
 
 import '../../constants.dart';
@@ -32,7 +33,14 @@ class HomeBody extends StatelessWidget {
                     ),
                     ListView.builder(
                       itemCount: cards.length,
-                      itemBuilder: (context,index) => YugiCard(itemIndex: index,card: cards[index],),
+                      itemBuilder: (context,index) => YugiCard(
+                        itemIndex: index,
+                        card: cards[index],
+                        press: (){
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (context)=> DetailsScreen(card: cards[index],))
+                          );
+                        },),
                     )
                   ],
                 ))

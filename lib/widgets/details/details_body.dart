@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:yu_gi_oh/models/card.dart';
 
 import '../../constants.dart';
 import 'color_dot.dart';
 import 'details_image.dart';
 class DetailsBody extends StatelessWidget {
-  const DetailsBody({Key? key}) : super(key: key);
+  const DetailsBody({Key? key, required this.card}) : super(key: key);
 
+  final PlayCard card;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
           width: double.infinity,
-          padding: EdgeInsets.symmetric(horizontal: eDefaultPadding),
+          padding: EdgeInsets.symmetric(horizontal: eDefaultPadding *1.5),
           decoration: BoxDecoration(
             color: eBackgroundColor,
             borderRadius: BorderRadius.only(
@@ -22,8 +25,9 @@ class DetailsBody extends StatelessWidget {
             ),
           ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              DetailsImage(size: size,image: "assets/DarkMagicianAlternate.png",),
+              Center(child: DetailsImage(size: size,image: card.image,)),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: eDefaultPadding),
                 child: Row(
@@ -37,7 +41,31 @@ class DetailsBody extends StatelessWidget {
               ),
             ],
           ),
-        )
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: eDefaultPadding/2),
+          child: Text(card.title,
+            style: Theme.of(context).textTheme.headline6,),
+        ),
+        Text(
+          'الهجوم:${card.atk}',
+          style: TextStyle(
+            fontSize: 28.0,
+            fontWeight: FontWeight.w600,
+            color: eSecondaryColor,
+          ),),
+        SizedBox(height: eDefaultPadding,),
+        Container(
+          margin: EdgeInsets.symmetric(vertical: eDefaultPadding/2),
+          padding: EdgeInsets.symmetric(horizontal: eDefaultPadding *1.5,vertical: eDefaultPadding/2),
+          child: Text(
+            card.desc,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 19.0,
+            ),
+          ),
+        ),
       ],
     );
   }
